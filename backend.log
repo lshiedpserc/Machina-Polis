@@ -1,0 +1,62 @@
+   Compiling backend v0.1.0 (/app/backend)
+warning: unused import: `tokio::sync::RwLock`
+ --> src/engine.rs:2:5
+  |
+2 | use tokio::sync::RwLock;
+  |     ^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused imports: `Mode` and `Session`
+ --> src/engine.rs:4:30
+  |
+4 | use crate::models::{Message, Session, SessionStatus, Mode};
+  |                              ^^^^^^^                 ^^^^
+
+warning: unused import: `WebSocket`
+ --> src/state.rs:1:47
+  |
+1 | use axum::extract::ws::{Message as WsMessage, WebSocket};
+  |                                               ^^^^^^^^^
+
+warning: unused import: `futures::stream::SplitSink`
+ --> src/state.rs:2:5
+  |
+2 | use futures::stream::SplitSink;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused imports: `Agent` and `Mode`
+ --> src/state.rs:8:21
+  |
+8 | use crate::models::{Agent, Mode, Session};
+  |                     ^^^^^  ^^^^
+
+warning: unused import: `futures::SinkExt`
+ --> src/state.rs:3:5
+  |
+3 | use futures::SinkExt;
+  |     ^^^^^^^^^^^^^^^^
+
+warning: variable `mode` is assigned to, but never used
+  --> src/engine.rs:35:21
+   |
+35 |                 let mode;
+   |                     ^^^^
+   |
+   = note: consider using `_mode` instead
+   = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: value assigned to `mode` is never read
+  --> src/engine.rs:42:21
+   |
+42 |                     mode = session.mode.clone();
+   |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = help: maybe it is overwritten before being read?
+   = note: `#[warn(unused_assignments)]` (part of `#[warn(unused)]`) on by default
+
+warning: `backend` (bin "backend") generated 8 warnings (run `cargo fix --bin "backend" -p backend` to apply 5 suggestions)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 2.13s
+     Running `target/debug/backend`
+Machina Polis Backend Starting...
+Listening on 0.0.0.0:3000
